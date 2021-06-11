@@ -8,7 +8,9 @@ namespace MyFirstConsoleAppProject
 {
     public class Calculator
     {
-        public int ProcessCalculation(InputModel inputModel)
+        
+
+        public int ProcessCalculation(InputModel karolis)
         {
             return 0;
         }

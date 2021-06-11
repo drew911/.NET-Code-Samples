@@ -8,8 +8,10 @@ namespace MyFirstConsoleAppProject
 {
     public class InputModel
     {
+       
+
         public int FirstNumber { get; set; }
-        public int SecondNumber { get; set; }
+        public int SecondNumber { get; }
 
         public string Operation { get; set; }
     }

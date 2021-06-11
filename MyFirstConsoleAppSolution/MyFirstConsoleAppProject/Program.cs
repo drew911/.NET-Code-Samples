@@ -21,7 +21,6 @@ namespace MyFirstConsoleAppProject
             // Convert to more suitable format
             InputModel parsedInput = inputProcessor.ProcessInput(consoleInput);
 
-            //
             var number = calculator.ProcessCalculation(parsedInput);
 
             Console.WriteLine(number);
