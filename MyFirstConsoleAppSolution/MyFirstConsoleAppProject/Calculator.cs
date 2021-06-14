@@ -8,11 +8,19 @@ namespace MyFirstConsoleAppProject
 {
     public class Calculator
     {
-        
-
-        public int ProcessCalculation(InputModel karolis)
+        public int ProcessCalculation(InputModel inputModel)
         {
-            return 0;
+            switch (inputModel.Operation)
+            {
+                case '+':
+                    return inputModel.FirstNumber + inputModel.SecondNumber;
+                case '-':
+                    return inputModel.FirstNumber - inputModel.SecondNumber;
+                case '*':
+                    return inputModel.FirstNumber * inputModel.SecondNumber;
+                default:
+                    return 0;
+            }
         }
     }
 }
