@@ -1,0 +1,16 @@
+﻿
+1. We will create warehousing solution which basically has just two actions 'Add' and 'List'
+	 Add 'ItemName' -> should save new items into lists of items. Item in this case could jsut be a string
+	 List -> Prints all items
+
+2. Program should not terminate until 'Exit' is written
+
+Example:
+Add Item1
+Add Item2
+List
+Items are Item1, Item2
+Add Item1
+Items are Item1, Item2, Item1
+Exit
+//Program terminates
