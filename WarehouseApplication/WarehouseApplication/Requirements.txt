@@ -4,6 +4,21 @@
 	 Remove 'ItemName' -> remove items. If Item does not exist, do nothing
 	 just be a string
 	 List -> Prints all items
+
+	 Optional: 
+	 Remove 'itemName' when items does not exist should return 'sorry item does not exist' instead of deleting
+	 'AddRange' where you can specify several items.
+
+	 Optional Extra:
+	 Add pienas
+	 Add pienas
+	 Add pienas2
+	 Modify when there are dublicates 'List' so that it shows quantity
+	 List
+	 pienas 2
+	 pienas2 1
+
+
 	 
 
 2. Program should not terminate until 'Exit' is written
@@ -11,6 +26,7 @@
 Example:
 Add Item1
 Add Item2
+AddRange Item3 Item4 Item5
 Remove Item2
 List
 Items are Item1
