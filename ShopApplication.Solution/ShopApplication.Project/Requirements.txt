@@ -1,0 +1,30 @@
+﻿We are creating an application for shop
+Shop has 3 items: Candy, Book, Juice (non-alcoholic)
+Each item has name and price (eur, integer):
+Candy : 4, Book 8, Juice 2
+
+There is a customer which has 10 euros in his e-waller.
+
+We create an Console app with a single Command
+- Buy 'Itemname' (as in warehouse app)
+- But when you buy, you have to charge customer. When he buys a Candy
+he has only 6 euros left.
+- If customer is unable to purchase an item print "not enough money"
+- The app has to allow buy several items without exiting program 
+(as in warehouse app)
+
+Example
+Buy Candy
+-> Candy Bought
+Buy Juice
+-> Juice Bought
+Buy Book
+-> Not enough money
+
+For advanced: 
+1. Implement top up action
+Topup 10
+2. Allow buy quanties as in 
+Buy Candy 3
+3. Change prices to decimals
+https://stackoverflow.com/questions/693372/what-is-the-best-data-type-to-use-for-money-in-c

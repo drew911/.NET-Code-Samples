@@ -6,8 +6,9 @@
 
         public int Quantity { get; set; }
 
-        public Item()
+        public Item(string name)
         {
+            Name = name;
             Quantity = 1;
         }
     }

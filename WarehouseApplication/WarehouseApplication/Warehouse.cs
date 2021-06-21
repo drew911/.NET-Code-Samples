@@ -9,24 +9,23 @@ namespace WarehouseApplication
 
         public void Add(string itemName)
         {
+            List<string> names = Items.Select(k => k.Name).ToList();
             bool doesExist = Items.Select(k => k.Name).Contains(itemName);
+
             if (!doesExist)
             {
-                var newItem = new Item()
-                {
-                    Name = itemName
-                };
+                var newItem = new Item(itemName);
 
                 Items.Add(newItem);
             }
             else
             {
-                var item = Items.First(i => i.Name == itemName);
+                Item item = Items.First(i => i.Name == itemName);
                 item.Quantity = item.Quantity + 1;
             }
         }
 
-        public string List()
+        public string GetInfo()
         {
             //return string.Join(", ", Items); // List items with ,
             var output = "";
@@ -38,6 +37,7 @@ namespace WarehouseApplication
 
             return output;
         }
+
 
         public bool Remove(string itemName)
         {
@@ -51,7 +51,6 @@ namespace WarehouseApplication
             Items = Items.Where(i => i.Name != itemName).ToList();
 
             return true;
-
         }
     }
 }

@@ -18,6 +18,8 @@
 	 pienas 2
 	 pienas2 1
 
+	 Optional Extra -> Rewrite this using Dictionary<string, int> and not List.
+
 
 	 
 

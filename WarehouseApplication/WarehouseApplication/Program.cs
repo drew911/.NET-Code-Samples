@@ -7,7 +7,7 @@ namespace WarehouseApplication
         static void Main(string[] args)
         {
             string command = "";
-            var warehouse = new Warehouse();
+            Warehouse warehouse = new Warehouse();
 
             while (command != "Exit")
             {
@@ -22,14 +22,14 @@ namespace WarehouseApplication
                 }
                 if (command == "List")
                 {
-                    Console.WriteLine(warehouse.List());
+                    Console.WriteLine(warehouse.GetInfo());
                 }
                 if (command.StartsWith("Remove"))
                 {
                     var itemName = command.Split(" ")[1];
                     if (!warehouse.Remove(itemName))
                     {
-                        Console.WriteLine("sorry item does not exist");
+                        Console.WriteLine("sorry could not delete them item");
                     }
                 }
             }
