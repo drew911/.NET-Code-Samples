@@ -21,9 +21,11 @@ Buy Juice
 Buy Book
 -> Not enough money
 
-For advanced: 
+Extra:
 1. Implement top up action
 Topup 10
+
+For advanced: 
 2. Allow buy quanties as in 
 Buy Candy 3
 3. Change prices to decimals
