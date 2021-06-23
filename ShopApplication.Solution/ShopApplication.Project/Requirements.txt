@@ -30,3 +30,16 @@ For advanced:
 Buy Candy 3
 3. Change prices to decimals
 https://stackoverflow.com/questions/693372/what-is-the-best-data-type-to-use-for-money-in-c
+
+For very advanced:
+1. Customer Management:
+
+Create Customer Jaunius 10
+-> Created Customer Jaunius with 10 euros
+Jaunius Buy Candy 
+-> 6 euros left for Jaunius
+Create Customer Vaida 20
+-> Created Vaida.....
+Vaida Buy Candy
+-> 14 euros left
+
