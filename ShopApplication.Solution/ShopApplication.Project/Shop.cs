@@ -54,5 +54,11 @@ namespace ShopApplication.Project
             }
             
         }
+
+        public void Topup(int amount)
+        {
+            _customer.Balance += amount;
+            Console.WriteLine($"Customer balance: {_customer.Balance}");
+        }
     }
 }

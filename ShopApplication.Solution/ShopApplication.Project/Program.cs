@@ -11,15 +11,27 @@ namespace ShopApplication.Project
 
             string command = "";
 
-            Console.WriteLine("Possible commands: Exit, Buy");
+            Console.WriteLine("Possible commands: Exit, Buy, Topup");
             while (command != "Exit")
             {
                 command = Console.ReadLine();
 
-                if (command.StartsWith("Buy"))
+                string commandName = command.Split(" ")[0];
+                string argument = command.Split(" ")[1];
+
+                switch (commandName)
                 {
-                    string itemName = command.Split(" ")[1];
-                    shop.Buy(itemName);
+                    case "Buy":
+                        shop.Buy(argument);
+                        break;
+
+                    case "Topup":
+                        int amount = Int32.Parse(argument);
+                        shop.Topup(amount);
+                        break;
+
+                    default:
+                        break;
                 }
             }
         }
