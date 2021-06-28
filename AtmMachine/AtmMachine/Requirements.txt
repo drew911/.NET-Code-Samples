@@ -1,0 +1,16 @@
+﻿Write a console program for Atm machine.
+Atm allows you two actions:
+Topup:
+
+Topup 50
+-> Your balance now is 60 euros
+
+Withdraw: Gives your amount in 50, 20, 10, 5 notes; 
+Withdraw 30
+-> You have received 20 and 10 
+
+Withdraw 75
+-> You have received 50, 20, 5
+
+Withdraw 100
+-> You have received 50, 50
