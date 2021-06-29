@@ -40,19 +40,21 @@ namespace AtmMachine
                 }
             }
 
-            return GenerateBankNotesInfo();
+            return GenerateInfo();
         }
 
-        private string GenerateBankNotesInfo()
+        private string GenerateInfo()
         {
-            string info = $"Your balance is {_balance}\n";
+            string balanceInfo = $"Your balance is {_balance}\n";
+            string notesInfo = InfoGenerator.ConvertToString(_bankNotes);
 
-            foreach (BankNote bankNote in _bankNotes.Where(b => b.Quantity != 0))
-            {
-                info += $"Nominal: {bankNote.Nominal} Quantity: {bankNote.Quantity}\n";
-            }
+            return balanceInfo + notesInfo;
 
-            return info;
+        }
+
+        public static string GetInfo()
+        {
+            return "info";
         }
     }
 }
