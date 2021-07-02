@@ -1,0 +1,20 @@
+﻿Write a console app which calculate salary for employee:
+Possible roles and salary cofficitents:
+
+1.Junior Developer 1000 + 5% per year
+2.Developer 2000 + 10% per year
+3.Senior Developer 2500 + 12% per year
+4.Architect 3500 + 20% per year
+
+
+Possible Console commands:
+Add [Person name and surname] [Role e.x. Junior Developer] [int for how many years is working]
+
+-> Add Jaunius Pinelis Senior Developer 9
+
+Show Salary [Person name and surname] (returns monthly)
+
+Show Salary Jaunius Pinelis
+-> 800eur
+
+OPtional requirement -> use inheritance.
