@@ -20,6 +20,8 @@ namespace AtmMachine
 
         public string TopUp(int amount)
         {
+            Console.WriteLine("Topup amount");
+            // 10% goes into savings acount
             _balance += amount;
 
             return $"Your balance is {_balance}";

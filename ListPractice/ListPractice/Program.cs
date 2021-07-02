@@ -15,11 +15,7 @@ namespace ListPractice
                     Name = "Item1",
                     Quantity = 1
                 },
-                new Item()
-                {
-                    Name = "Item2",
-                    Quantity = 4
-                },
+                new Item("Item2", 4),
                 new Item()
                 {
                     Name = "Item3",
@@ -27,6 +23,17 @@ namespace ListPractice
                     Deleted = true
                 },
             };
+
+            var item = new Item();
+            item.Name = "Item1";
+            item.Quantity = 4;
+
+            var item2 = new Item()
+            {
+                Name = "Item1",
+                Quantity = 4
+            };
+
 
 
             List<Item> undeletedItems = items.Where(item => item.Deleted != true).ToList();

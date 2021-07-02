@@ -12,16 +12,29 @@ namespace AtmMachine
             while (command != "Exit")
             {
                 command = Console.ReadLine();
-                int numbers = Int32.Parse(command.Split(" ")[1]);
+                try
+                {
+                    int numbers = Int32.Parse(command.Split(" ")[1]);
 
-                if (command.StartsWith("Topup"))
-                {
-                    Console.WriteLine(atm.TopUp(4));
+                    if (command.StartsWith("Topup"))
+                    {
+                        Console.WriteLine(atm.TopUp(4));
+                    }
+                    if (command.StartsWith("Withdraw"))
+                    {
+                        Console.WriteLine(atm.Withdraw(numbers));
+                    }
                 }
-                if (command.StartsWith("Withdraw"))
+                catch (ArgumentNullException)
                 {
-                    Console.WriteLine(atm.Withdraw(numbers));
+
                 }
+                catch(Exception)
+                {
+                    //Continue
+                    Console.WriteLine("Something gone wrong, please try again");
+                }
+               
             }
         }
     }
