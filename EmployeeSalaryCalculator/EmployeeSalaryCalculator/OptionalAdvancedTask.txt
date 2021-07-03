@@ -1,0 +1,17 @@
+﻿Write a console program, 
+which inputs just a name (FullName or FirstName or LastName)
+and then program makes a call to https://jsonplaceholder.typicode.com/users
+and displays Address Information.
+
+Example: would be:
+--
+-> Please enter the name
+ Schulist
+-> AddressInfo: "street": "Norberto Crossing", "suite": "Apt. 950", "city": "South Christy", "zipcode": "23505-1337"
+      
+--
+
+There will be several problems here:
+You can make a call with HttpClient class.
+You can map received info into C# object with JsonConvert library.
+
