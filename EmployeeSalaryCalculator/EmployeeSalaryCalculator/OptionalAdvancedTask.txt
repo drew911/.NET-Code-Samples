@@ -13,5 +13,5 @@ Example: would be:
 
 There will be several problems here:
 You can make a call with HttpClient class.
-You can map received info into C# object with JsonConvert library.
+You can map received info into C# object with JsonConvert library.(parse json object)
 

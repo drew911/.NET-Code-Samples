@@ -8,7 +8,7 @@ Possible roles and salary cofficitents:
 
 
 Possible Console commands:
-Add [Person name and surname] [Role e.x. Junior Developer] [int for how many years is working]
+Add [Person name and surname] [Role e.x. JuniorDeveloper] [int for how many years is working]
 
 -> Add Jaunius Pinelis SeniorDeveloper 9
 
