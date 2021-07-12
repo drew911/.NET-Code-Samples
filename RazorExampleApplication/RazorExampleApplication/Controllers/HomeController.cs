@@ -34,9 +34,29 @@ namespace RazorExampleApplication.Controllers
         {
             IndexModel model = new IndexModel()
             {
-                Name = "fill me"
+
             };
             return View(model);
+        }
+
+        public IActionResult FakeLogin()
+        {
+            FakeLoginModel model = new FakeLoginModel();
+            return View(model);
+        }
+
+        public IActionResult Authenticate(FakeLoginModel model)
+        {
+            // authenticating the user
+            if (model.Username == "Jaunius" && model.Password == "Pinelis")
+            {
+                return View();
+            }
+            else
+            {
+                return View("AuthenticationFailed");
+            }
+
         }
 
         public IActionResult DisplayRegister(IndexModel model)
