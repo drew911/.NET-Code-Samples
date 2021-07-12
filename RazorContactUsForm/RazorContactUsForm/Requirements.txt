@@ -8,3 +8,5 @@ Requirements:
 
 Additional:
 1. Add Validation so that "name cannot be empty"; Try using attributes and ModelState
+2. 'Contact us' form should be first to open (on load) and Index/Privacy should be removed
+-> this means remove all unneeded files, code.
