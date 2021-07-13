@@ -8,6 +8,7 @@ namespace RazorExampleApplication.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private int number = 0;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -16,6 +17,7 @@ namespace RazorExampleApplication.Controllers
 
         public IActionResult Index()
         {
+            number++;
             IndexModel model = new IndexModel()
             {
                 Name = "Jonas",
@@ -47,6 +49,10 @@ namespace RazorExampleApplication.Controllers
 
         public IActionResult Authenticate(FakeLoginModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("FakeLogin");
+            }
             // authenticating the user
             if (model.Username == "Jaunius" && model.Password == "Pinelis")
             {
