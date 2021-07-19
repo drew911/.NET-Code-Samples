@@ -1,0 +1,12 @@
+﻿Today we are creating a 'Contact us form'
+
+Requirements:
+1. New section 'Contact us' in the navigation bar.
+2. Contact us contains a form with 'Name' and 'Description' and button 'Submit'
+3. Pressing Submit should redirect into new View which displays
+'Thank <Name> for the query, we will contact you soon'.
+
+Additional:
+1. Add Validation so that "name cannot be empty"; Try using attributes and ModelState
+2. 'Contact us' form should be first to open (on load) and Index/Privacy should be removed
+-> this means remove all unneeded files, code.
