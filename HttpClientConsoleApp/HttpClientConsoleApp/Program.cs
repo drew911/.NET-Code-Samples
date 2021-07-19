@@ -11,14 +11,13 @@ namespace HttpClientConsoleApp
     {
         static async Task Main(string[] args)
         {
-            string url = "https://jsonplaceholder.typicode.com/users";
-
+            string url = "https://www.lb.lt/webservices/ExchangeRates/ExchangeRates.asmx/getExchangeRatesByDate?Date=2011-02-02";
+            
             HttpClient client = new HttpClient();
 
             string result = await client.GetStringAsync(url);
 
-            List<UserModel> parsedResult =  JsonConvert.DeserializeObject<List<UserModel>>(result);
-
+            ExchangeRates parsedResult =  JsonConvert.DeserializeObject<ExchangeRates>(result);
         }
     }
 }
