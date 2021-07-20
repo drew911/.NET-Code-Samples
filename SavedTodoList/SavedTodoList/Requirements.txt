@@ -1,0 +1,14 @@
+﻿We are creating Todo List application
+Todo List Item has only Name and Description
+
+Update Navigation bar with two new urls:
+1. Form where you enter Name and Description of the new todo-item.
+2. An table where you can see all the entered todos.
+
+Requirements: reloading the app should contain all entered todos.
+
+Extra Requirements:
+1. Allow deleting todos.
+2. If .json files gets deleted, program should not crash.
+
+
