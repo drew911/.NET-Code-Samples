@@ -11,4 +11,10 @@ Extra Requirements:
 1. Allow deleting todos.
 2. If .json files gets deleted, program should not crash.
 
+Extra Optional Advanced:
+1. Strike-through functinality:
+The list should have checkbox next to it. Clicking on checkbox, should mark the todo
+as completed. It should not reload the page.
+What this means - you will need to write extra javascript to call the controllers action.
+
 
