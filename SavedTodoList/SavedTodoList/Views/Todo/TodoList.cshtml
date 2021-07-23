@@ -1,0 +1,33 @@
+﻿@model List<TodoItem> 
+
+<h3>Todo List works!</h3>
+
+<ul>
+    @foreach (var item in Model)
+    {
+    <li>
+        Name: @item.Name, Description: @item.Description, Completed: @item.Completed
+            @Html.CheckBox(@item.Id, @item.Completed);
+    </li>
+    }
+</ul>
+
+<script>
+
+    var checkbox = document.querySelector("input[type=checkbox]");
+
+    checkbox.addEventListener('change', function () {
+        console.log(this);
+        ToggleTodo(this.id);
+    });
+
+    function ToggleTodo(id) {
+        $.ajax({
+            url: '/todo/toggletodo',
+            data: { id: id }
+        }).done(function () {
+            alert('Added');
+        });
+    }
+
+</script>
