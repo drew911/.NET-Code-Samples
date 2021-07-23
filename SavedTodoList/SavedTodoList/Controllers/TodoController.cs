@@ -24,7 +24,7 @@ namespace SavedTodoList.Controllers
             return View();
         }
 
-        public IActionResult ToggleTodo(string id)
+        public IActionResult ToggleTodo(string id, bool value)
         {
             string itemsText = System.IO.File.ReadAllText("./Data/Data.json");
             List<TodoItem> items = JsonConvert.DeserializeObject<List<TodoItem>>(itemsText);
