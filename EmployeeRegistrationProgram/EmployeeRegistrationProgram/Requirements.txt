@@ -1,0 +1,20 @@
+﻿Functional requirement:
+This application will be very similar to TodoApplication.
+
+Will again 2 extra tabs to Navigation bar:
+List -> which displays all employees.
+Form -> Form to add new employee.
+
+Employee should have firstname, lastname, age.
+
+Nonfunctional requirements:
+1. 2 different data saving modes
+   Json file -> use json file to load data.
+   Memory -> use AddSingleton dependency injection.
+
+   There two different classes should use the same interface
+2. Have writing/reading data in separate file (service) rather than controller.
+
+
+Advanced optional:
+	1. Be able to configure Json or Memory storage in appsettings.json

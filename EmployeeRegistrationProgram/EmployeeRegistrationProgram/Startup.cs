@@ -4,13 +4,12 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SavedTodoList.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SavedTodoList
+namespace EmployeeRegistrationProgram
 {
     public class Startup
     {
@@ -25,8 +24,6 @@ namespace SavedTodoList
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddScoped<TodoService>();
-            services.AddSingleton<MemoryFileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
