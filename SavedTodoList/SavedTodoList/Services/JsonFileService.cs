@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace SavedTodoList.Services
 {
-    public class JsonFileService
+    public class JsonFileService : IFileService
     {
+     
+
         private const string DATA_URL = "./Data/Data.json";
 
         public List<TodoItem> GetItemsFromFile()

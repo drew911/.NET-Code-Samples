@@ -14,9 +14,9 @@ namespace SavedTodoList.Controllers
     {
         private TodoService _todoService;
 
-        public TodoController()
+        public TodoController(TodoService todoService)
         {
-            _todoService = new();
+            _todoService = todoService;
         }
 
         public IActionResult TodoList()

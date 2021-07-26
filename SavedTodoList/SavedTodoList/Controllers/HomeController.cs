@@ -12,10 +12,12 @@ namespace SavedTodoList.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        int number = 0;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            number++;
         }
 
         public IActionResult Index()

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SavedTodoList.Services
 {
-    public class TextFileService
+    public class TextFileService : IFileService
     {
         private const string DATA_URL = "./Data/Data.txt";
 
@@ -33,6 +33,8 @@ namespace SavedTodoList.Services
                     Description = parameters[2],
                     Completed = bool.Parse(parameters[3])
                 };
+
+                items.Add(item);
             }
 
             return items;
@@ -43,7 +45,7 @@ namespace SavedTodoList.Services
             System.IO.File.WriteAllText(DATA_URL, "");
             foreach (TodoItem item in items)
             {
-                System.IO.File.AppendText($"{item.Id};{item.Name};{item.Description};{item.Completed}");
+                System.IO.File.AppendAllText(DATA_URL, $"{item.Id};{item.Name};{item.Description};{item.Completed}\n");
             }
         }
     }

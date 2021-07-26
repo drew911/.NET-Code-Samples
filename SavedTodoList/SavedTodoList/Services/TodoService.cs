@@ -10,11 +10,11 @@ namespace SavedTodoList.Services
     public class TodoService
     {
 
-        private TextFileService _jsonFileService;
+        private IFileService _jsonFileService;
 
-        public TodoService()
+        public TodoService(IFileService jsonFileService)
         {
-            _jsonFileService = new TextFileService();
+            _jsonFileService = jsonFileService;
         }
 
         public void ToggleTodo(string id)
