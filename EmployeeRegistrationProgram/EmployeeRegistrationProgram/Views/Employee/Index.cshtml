@@ -1,1 +1,12 @@
-﻿<h5>Employees list</h5>
+﻿@model List<EmployeeModel>
+
+<h3>Employees</h3>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            Full Name: @item.FirstName @item.LastName, Age: @item.Age         
+        </li>
+    }
+</ul>
