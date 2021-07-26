@@ -12,11 +12,11 @@ namespace SavedTodoList.Controllers
 {
     public class TodoController : Controller
     {
-        private JsonFileService _jsonFileService;
+        private TodoService _todoService;
 
         public TodoController()
         {
-            _jsonFileService = new JsonFileService();
+            _todoService = new();
         }
 
         public IActionResult TodoList()
@@ -24,7 +24,7 @@ namespace SavedTodoList.Controllers
             //string itemsText = System.IO.File.ReadAllText("./Data/Data.json");
             //List<TodoItem> items = JsonConvert.DeserializeObject<List<TodoItem>>(itemsText);
             
-            List<TodoItem> items = _jsonFileService.GetItemsFromFile();
+            List<TodoItem> items = _todoService.GetAllTodos();
 
             return View(items);
         }
@@ -39,17 +39,27 @@ namespace SavedTodoList.Controllers
             //string itemsText = System.IO.File.ReadAllText("./Data/Data.json");
             //List<TodoItem> items = JsonConvert.DeserializeObject<List<TodoItem>>(itemsText);
 
-            List<TodoItem> items = _jsonFileService.GetItemsFromFile();
+            //List<TodoItem> items = _jsonFileService.GetItemsFromFile();
 
-            TodoItem selectedItem = items.FirstOrDefault(i => i.Id == id);
-            selectedItem.Completed = !selectedItem.Completed;
+            //TodoItem selectedItem = items.FirstOrDefault(i => i.Id == id);
+            //selectedItem.Completed = !selectedItem.Completed;
 
             //itemsText = JsonConvert.SerializeObject(items);
             //System.IO.File.WriteAllText("./Data/Data.json", itemsText);
 
-            _jsonFileService.WriteItemsToFile(items);
+            //_jsonFileService.WriteItemsToFile(items);
+            try
+            {
+                _todoService.ToggleTodo(id);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(502, ex.InnerException);
+            }
+            
 
-            return Ok();
+           
         }
 
         public IActionResult SubmitTodo(TodoItem todoItem)
@@ -61,19 +71,21 @@ namespace SavedTodoList.Controllers
 
             //string itemsText = System.IO.File.ReadAllText("./Data/Data.json");
             //List<TodoItem> items = JsonConvert.DeserializeObject<List<TodoItem>>(itemsText);
-            List<TodoItem> items = _jsonFileService.GetItemsFromFile();
+            //List<TodoItem> items = _jsonFileService.GetItemsFromFile();
 
-            if (items == null)
-            {
-                items = new();
-            }
+            //if (items == null)
+            //{
+            //    items = new();
+            //}
 
-            items.Add(todoItem);
+            //items.Add(todoItem);
 
             //itemsText = JsonConvert.SerializeObject(items);
             //System.IO.File.WriteAllText("./Data/Data.json", itemsText);
 
-            _jsonFileService.WriteItemsToFile(items);
+            //_jsonFileService.WriteItemsToFile(items);
+
+            _todoService.CreateTodo(todoItem);
 
             return RedirectToAction("TodoList");
         }
