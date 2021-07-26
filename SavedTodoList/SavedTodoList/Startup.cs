@@ -25,7 +25,7 @@ namespace SavedTodoList
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddScoped<TodoService>();
+            services.AddScoped<TodoService>();
             services.AddSingleton<MemoryFileService>();
         }
 
