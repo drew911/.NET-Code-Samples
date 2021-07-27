@@ -1,14 +1,10 @@
 ﻿using EmployeeRegistrationProgram.Models;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeRegistrationProgram.Services
 {
-    public class JsonFileService
+    public class JsonFileService : IFileService
     {
         private const string DATA_URL = "./Data/Data.json";
 

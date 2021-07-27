@@ -1,26 +1,22 @@
 ﻿using EmployeeRegistrationProgram.Models;
 using EmployeeRegistrationProgram.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeRegistrationProgram.Controllers
 {
     public class EmployeeController : Controller
     {
-        private JsonFileService _jsonFileService;
+        private IFileService _fileService;
 
-        public EmployeeController(JsonFileService jsonFileService)
+        public EmployeeController(IFileService fileService)
         {
-            _jsonFileService = jsonFileService;
+            _fileService = fileService;
         }
 
         public IActionResult Index()
         {
-            List<EmployeeModel> employees = _jsonFileService.GetEmployees();
+            List<EmployeeModel> employees = _fileService.GetEmployees();
             return View(employees);
         }
 
@@ -31,9 +27,9 @@ namespace EmployeeRegistrationProgram.Controllers
 
         public IActionResult Add(EmployeeModel model)
         {
-            List<EmployeeModel> employees = _jsonFileService.GetEmployees();
+            List<EmployeeModel> employees = _fileService.GetEmployees();
             employees.Add(model);
-            _jsonFileService.OverwriteEmployees(employees);
+            _fileService.OverwriteEmployees(employees);
 
             return RedirectToAction("Index");
         }
