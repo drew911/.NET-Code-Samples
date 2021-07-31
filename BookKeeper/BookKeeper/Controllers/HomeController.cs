@@ -1,6 +1,7 @@
 ﻿using BookKeeper.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,13 +14,25 @@ namespace BookKeeper.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MySqlConnection connection)
         {
             _logger = logger;
+            _connection = connection;
         }
 
         public IActionResult Index()
         {
+
+            _connection.Open();
+
+            using var command = new MySqlCommand("SELECT * FROM products;", _connection);
+            using var reader = command.ExecuteReaderAsync();
+            while (reader.Read())
+            {
+                var value = reader.GetValue(0);
+                // do something with 'value'
+            }
+
             return View();
         }
 
@@ -33,5 +46,13 @@ namespace BookKeeper.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+
+        
+
+
+
+
+
+}
 }
